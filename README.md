@@ -1,7 +1,7 @@
 # MoME
 A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts
 
-![image](https://github.com/ZhangxinruBIT/MoME/tree/main/fig/comb12.pdf)
+![image](https://github.com/ZhangxinruBIT/MoME/tree/main/fig/comb12.png)
 
 Fig.1: Different paradigms for brain lesion segmentation and an overview of the proposed framework:
 a) the traditional paradigm;
