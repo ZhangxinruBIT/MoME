@@ -16,7 +16,28 @@ conda activate MoME
 git clone https://github.com/ZhangxinruBIT/MoME.git
 cd MoME/MoME
 pip install -e .
-pip install git+https://github.com/ZhangxinruBIT/MoME/tree/main/dynamic_network_architectures
 ```
+Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, after executing the installation command, please manually replace the  **dynamic_network_architectures** under your MoME virtual environment. The path will be something like **/vol/biomedic3/xz2223/anaconda3/envs/MoME/lib/python3.9/site-packages/dynamic_network_architectures**.
+
 # Usage
-**CarveMix augmentation method is agnostic to the network structure**
+
+**Data Preprocessing**
+```
+cd MoME/Codes_prepro
+python one-step.py -dataset_path -ss #if the brain images in your dataset are with skull, please set the -ss, otherwise omit.
+```
+**Datasplit**
+
+Please set your own datasplit, for me we save the information in the **datasplit.json**.
+
+For traning and inference, since we implement within the nnU-NetV2, the well-introduced usage can be follwed at [nnU-Net](https://github.com/MIC-DKFZ/nnUNet.git).
+
+
+**Training**
+```
+nnUNet_train XXX 3d_fullres MoME
+```
+**Inference**
+```
+
+```
