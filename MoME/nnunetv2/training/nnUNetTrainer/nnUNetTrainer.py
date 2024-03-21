@@ -564,7 +564,7 @@ class nnUNetTrainer(object):
         json_path = '/gpfs/home/xz2223/Project/nnUNetV2/Codes/nnUNet_JsonData_debugwith5Experts_abnormal_from_scratch/datasplit.json'
         with open(json_path, 'r') as json_file:
             DATA = json.load(json_file)
-        if self.fold == 'MOE5experts_finetune_degeneration_plan1_segfree-1e-3_cllossl3V3':
+        if self.fold == 'MoME':
 
             tr_keys = DATA['train']['BraTS'] + DATA['train']['ATLAS'] +DATA['train']['OASIS']\
                 +DATA['train']['ISLES']+DATA['train']['WMH2017']+DATA['train']['MSSEG']
