@@ -19,7 +19,7 @@ cd MoME
 git clone https://github.com/ZhangxinruBIT/dynamic_network_architectures.git
 pip install -e .
 ```
-Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, after executing the installation command. The path will be something like **/vol/biomedic3/xz2223/anaconda3/envs/MoME/lib/python3.9/site-packages/dynamic_network_architectures**.
+Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the original one. 
 
 # Usage Preparation
 
