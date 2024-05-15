@@ -66,6 +66,7 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 
 **Training**
+
 Before employing the MoME training, ensure you have obtained modality experts trained with nnUNet using corresponding modality images. You can adjust the path to align with the specialized modality nnUNets in [nnUNetTrainer.initialize(from line 214 to 245)](https://github.com/ZhangxinruBIT/MoME/blob/main/MoME/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py). 
 Alternatively, you can utilize our well-trained model and configure the path accordingly.
 ```
