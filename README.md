@@ -44,8 +44,8 @@ python one-step.py -dataset_path -ss #If the brain images in your dataset includ
 ```
 **Datasplit**
 
-Please set your own datasplit, for me we save the information in the **[datasplit.json](https://github.com/ZhangxinruBIT/MoME/blob/main/MoME/datasplit.json)**.
-And then modify the **do_split** in [nnUNetTrainer](https://github.com/ZhangxinruBIT/MoME/blob/main/MoME/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py) with the code like:
+Please set your own datasplit, for me we save the information in the **[datasplit.json](MoME_foundation/datasplit.json)**.
+And then modify the **do_split** in [nnUNetTrainer](MoME_foundation/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py) with the code like:
 ```
 if self.fold == 'MoME':
 
