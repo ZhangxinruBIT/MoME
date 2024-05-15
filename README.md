@@ -16,9 +16,6 @@ conda create --name MoME python=3.9.18
 conda activate MoME
 git clone https://github.com/ZhangxinruBIT/MoME.git
 cd MoME
-git clone https://github.com/ZhangxinruBIT/dynamic-network-architectures.git
-mv dynamic-network-architectures/dynamic_network_architectures dynamic_network_architectures
-rm -rf dynamic-network-architectures
 pip install -e .
 ```
 Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the original one. 
