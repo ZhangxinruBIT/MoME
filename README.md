@@ -9,6 +9,26 @@ b) the foundation model paradigm;
 c) the proposed \textit{mixture of modality experts} (**MoME**) framework for constructing the foundation model.
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb34.png)
 Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart that compares the average Dice score of foundation models from the perspectives of different modalities and lesion types. b) t-SNE plots of latent spaces for nnU-Net and  **MoME**, where each dot represents a brain image.
+
+Please also cite this paper if you are using MoME for your research!
+
+      @InProceedings{10.1007/978-3-030-87193-2_19,
+      author="Zhang, Xinru
+      and Ou, Ni
+      and Basaran, Berke Doga
+      and Visentin, Marco
+      and Gu, Renyang
+      and Ouyang, Cheng
+      and Liu, Yaou
+      and Matthew, Paul M.
+      and Ye, Chuyang
+      and Bai, Wenjia",
+      title="A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts",
+      booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2024",
+      year="2024",
+      publisher="Springer International Publishing",
+      }
+
 # Installation
 
 ```
@@ -18,7 +38,7 @@ git clone https://github.com/ZhangxinruBIT/MoME.git
 cd MoME/MoME_foundation
 pip install -e .
 ```
-Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the original one. 
+Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the [original one]([https://github.com/MIC-DKFZ/nnUNet.git](https://github.com/MIC-DKFZ/dynamic-network-architectures)). 
 
 # Usage Preparation
 
