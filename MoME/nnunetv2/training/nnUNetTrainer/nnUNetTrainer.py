@@ -1295,9 +1295,9 @@ class nnUNetTrainer(object):
                     mod = mod._orig_mod
                     mod1 = mod1._orig_mod
                     mod2 = mod2._orig_mod
-                    mod3 = mod1._orig_mod
-                    mod4 = mod2._orig_mod
-                    mod5 = mod2._orig_mod
+                    mod3 = mod3._orig_mod
+                    mod4 = mod4._orig_mod
+                    mod5 = mod5._orig_mod
 
                 checkpoint = {
                     'network_weights': mod.state_dict(),
@@ -1314,8 +1314,8 @@ class nnUNetTrainer(object):
                 
                 checkpoint = {
                     'network_weights': mod1.state_dict(),
-                    'optimizer_state': self.optimizer.state_dict(),
-                    'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
+                    # 'optimizer_state': self.optimizer.state_dict(),
+                    # 'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
                     'logging': self.logger.get_checkpoint(),
                     '_best_ema': self._best_ema,
                     'current_epoch': self.current_epoch + 1,
@@ -1327,8 +1327,8 @@ class nnUNetTrainer(object):
                 
                 checkpoint = {
                     'network_weights': mod2.state_dict(),
-                    'optimizer_state': self.optimizer.state_dict(),
-                    'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
+                    # 'optimizer_state': self.optimizer.state_dict(),
+                    # 'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
                     'logging': self.logger.get_checkpoint(),
                     '_best_ema': self._best_ema,
                     'current_epoch': self.current_epoch + 1,
@@ -1340,8 +1340,8 @@ class nnUNetTrainer(object):
                 
                 checkpoint = {
                     'network_weights': mod3.state_dict(),
-                    'optimizer_state': self.optimizer.state_dict(),
-                    'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
+                    # 'optimizer_state': self.optimizer.state_dict(),
+                    # 'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
                     'logging': self.logger.get_checkpoint(),
                     '_best_ema': self._best_ema,
                     'current_epoch': self.current_epoch + 1,
@@ -1353,8 +1353,8 @@ class nnUNetTrainer(object):
                 
                 checkpoint = {
                     'network_weights': mod4.state_dict(),
-                    'optimizer_state': self.optimizer.state_dict(),
-                    'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
+                    # 'optimizer_state': self.optimizer.state_dict(),
+                    # 'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
                     'logging': self.logger.get_checkpoint(),
                     '_best_ema': self._best_ema,
                     'current_epoch': self.current_epoch + 1,
@@ -1366,8 +1366,8 @@ class nnUNetTrainer(object):
                 
                 checkpoint = {
                     'network_weights': mod5.state_dict(),
-                    'optimizer_state': self.optimizer.state_dict(),
-                    'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
+                    # 'optimizer_state': self.optimizer.state_dict(),
+                    # 'grad_scaler_state': self.grad_scaler.state_dict() if self.grad_scaler is not None else None,
                     'logging': self.logger.get_checkpoint(),
                     '_best_ema': self._best_ema,
                     'current_epoch': self.current_epoch + 1,
@@ -1386,6 +1386,12 @@ class nnUNetTrainer(object):
 
         if isinstance(filename_or_checkpoint, str):
             checkpoint = torch.load(filename_or_checkpoint, map_location=self.device)
+            checkpoint1 = torch.load(filename_or_checkpoint.replace('latest','latest1').replace('best','best1'), map_location=self.device)
+            checkpoint2 = torch.load(filename_or_checkpoint.replace('latest','latest2').replace('best','best2'), map_location=self.device)
+            checkpoint3 = torch.load(filename_or_checkpoint.replace('latest','latest3').replace('best','best3'), map_location=self.device)
+            checkpoint4 = torch.load(filename_or_checkpoint.replace('latest','latest4').replace('best','best4'), map_location=self.device)
+            checkpoint5 = torch.load(filename_or_checkpoint.replace('latest','latest4').replace('best','best4'), map_location=self.device)
+
         # if state dict comes from nn.DataParallel but we use non-parallel model here then the state dict keys do not
         # match. Use heuristic to make it match
         new_state_dict = {}
@@ -1394,6 +1400,41 @@ class nnUNetTrainer(object):
             if key not in self.network.state_dict().keys() and key.startswith('module.'):
                 key = key[7:]
             new_state_dict[key] = value
+
+        new_state_dict1 = {}
+        for k, value in checkpoint1['network_weights'].items():
+            key = k
+            if key not in self.network1.state_dict().keys() and key.startswith('module.'):
+                key = key[7:]
+            new_state_dict1[key] = value
+            
+        new_state_dict2 = {}
+        for k, value in checkpoint2['network_weights'].items():
+            key = k
+            if key not in self.network2.state_dict().keys() and key.startswith('module.'):
+                key = key[7:]
+            new_state_dict2[key] = value
+            
+        new_state_dict3 = {}
+        for k, value in checkpoint3['network_weights'].items():
+            key = k
+            if key not in self.network3.state_dict().keys() and key.startswith('module.'):
+                key = key[7:]
+            new_state_dict3[key] = value
+            
+        new_state_dict4 = {}
+        for k, value in checkpoint4['network_weights'].items():
+            key = k
+            if key not in self.network4.state_dict().keys() and key.startswith('module.'):
+                key = key[7:]
+            new_state_dict4[key] = value
+            
+        new_state_dict5 = {}
+        for k, value in checkpoint5['network_weights'].items():
+            key = k
+            if key not in self.network5.state_dict().keys() and key.startswith('module.'):
+                key = key[7:]
+            new_state_dict5[key] = value
 
         self.my_init_kwargs = checkpoint['init_args']
         self.current_epoch = checkpoint['current_epoch']
@@ -1413,6 +1454,10 @@ class nnUNetTrainer(object):
                 self.network._orig_mod.load_state_dict(new_state_dict)
             else:
                 self.network.load_state_dict(new_state_dict)
+                self.network1.load_state_dict(new_state_dict1)
+                self.network2.load_state_dict(new_state_dict2)
+                self.network3.load_state_dict(new_state_dict3)
+                self.network5.load_state_dict(new_state_dict5)
         self.optimizer.load_state_dict(checkpoint['optimizer_state'])
         if self.grad_scaler is not None:
             if checkpoint['grad_scaler_state'] is not None:
