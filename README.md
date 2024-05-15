@@ -12,7 +12,7 @@ Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart th
 
 Please also cite this paper if you are using MoME for your research!
 
-      @InProceedings{10.1007/978-3-030-87193-2_19,
+      @InProceedings{
       author="Zhang, Xinru
       and Ou, Ni
       and Basaran, Berke Doga
