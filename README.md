@@ -47,7 +47,6 @@ to better manage the data split.
 
 # Usage with nnU-NetV2
 For traning and inference, since we implement within the nnU-NetV2, the well-introduced usage can be follwed at [nnU-Net](https://github.com/MIC-DKFZ/nnUNet.git). Please ensure that the dataset format meets the requirements expected by nnU-Net with our preprocessed data (Rename the directories to resemble **imagesTr** and **labelsTr** under **Dataset_XXXX**.). 
-Before employing the MoME training, ensure you have obtained modality experts trained with nnUNet using corresponding modality images. You can adjust the path to align with the specialized modality nnUNets using [nnU-Net](https://github.com/ZhangxinruBIT/MoME/blob/main/MoME/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py). Alternatively, you can utilize our well-trained model and configure the path accordingly.
 
 **Experiment planning and preprocessing**
 ```
@@ -55,6 +54,8 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 
 **Training**
+Before employing the MoME training, ensure you have obtained modality experts trained with nnUNet using corresponding modality images. You can adjust the path to align with the specialized modality nnUNets in [nnUNetTrainer.initialize(from line 214 to 245)](https://github.com/ZhangxinruBIT/MoME/blob/main/MoME/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py). 
+Alternatively, you can utilize our well-trained model and configure the path accordingly.
 ```
 nnUNet_train XXX 3d_fullres MoME
 ```
