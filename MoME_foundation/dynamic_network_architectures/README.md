@@ -1,2 +1,0 @@
-# dynamic_network_architectures
-Modified one from dynamic_network_architectures
