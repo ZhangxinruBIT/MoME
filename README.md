@@ -13,16 +13,8 @@ Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart th
 Please also cite this paper if you are using MoME for your research!
 
       @InProceedings{
-      author="Zhang, Xinru
-      and Ou, Ni
-      and Basaran, Berke Doga
-      and Visentin, Marco
-      and Gu, Renyang
-      and Ouyang, Cheng
-      and Liu, Yaou
-      and Matthew, Paul M.
-      and Ye, Chuyang
-      and Bai, Wenjia",
+      author="Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Gu, Renyang and Ouyang, Cheng and Liu, Yaou and Matthew, Paul M.
+      and Ye, Chuyang and Bai, Wenjia",
       title="A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts",
       booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2024",
       year="2024",
