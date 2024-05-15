@@ -307,10 +307,10 @@ def Generate_X1(source_label_path,target_label_path,save_transform_Dir,skull_str
 		if f in src:
 			n=1
 			
-	if n==1 and not skull_stripping:
-		target_label_path = target_label_path[1]
+	if n==1 or not skull_stripping:
+		target_label_path = target_label_path[1] #standard_mni152_skull_strip.nii.gz
 	else:
-		target_label_path = target_label_path[0]
+		target_label_path = target_label_path[0] #standard_mni152.nii.gz
 			
 	tar = target_label_path.split('/')[-1].split('.nii.gz')[0]
 	save_transform_to=os.path.join(save_transform_Dir,src+'_to_MNI152')
