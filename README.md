@@ -15,7 +15,7 @@ Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart th
 conda create --name MoME python=3.9.18
 conda activate MoME
 git clone https://github.com/ZhangxinruBIT/MoME.git
-cd MoME/MoME_foundation
+cd MoME/MoME_foundation/MoME
 pip install -e .
 ```
 Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the original one. 
