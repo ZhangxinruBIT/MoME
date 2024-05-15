@@ -29,7 +29,7 @@ git clone https://github.com/ZhangxinruBIT/MoME.git
 cd MoME/MoME_foundation
 pip install -e .
 ```
-Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the [original one]([https://github.com/MIC-DKFZ/nnUNet.git](https://github.com/MIC-DKFZ/dynamic-network-architectures)). 
+Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the [original one](https://github.com/MIC-DKFZ/dynamic-network-architectures). 
 
 # Usage Preparation
 
