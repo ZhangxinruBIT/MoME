@@ -36,7 +36,7 @@ Additionally, since we have made significant changes to the third-party library 
 **Data Preprocessing**
 
 We perform affine registration, skull stripping, and brain imaging cropping, along with their respective annotations. 
-But make sure you have downloaded the Advanced Normalization Tools (**[ANTs](https://github.com/ANTsX/ANTs)) before.
+But make sure you have downloaded the Advanced Normalization Tools ([ANTs](https://github.com/ANTsX/ANTs)) before.
 The following command can be executed after you convert the dataset to the format required by [nnU-NetV2](https://github.com/MIC-DKFZ/nnUNet.git).
 ```
 cd MoME/Codes_prepro
