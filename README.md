@@ -1,12 +1,11 @@
-# MoME
-A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts
+# MoME: A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts
 
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb12.png)
 
 Fig.1: Different paradigms for brain lesion segmentation and an overview of the proposed framework:
 a) the traditional paradigm;
 b) the foundation model paradigm;
-c) the proposed \textit{mixture of modality experts} (**MoME**) framework for constructing the foundation model.
+c) the proposed mixture of modality experts (**MoME**) framework for constructing the foundation model.
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb34.png)
 Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart that compares the average Dice score of foundation models from the perspectives of different modalities and lesion types. b) t-SNE plots of latent spaces for nnU-Net and  **MoME**, where each dot represents a brain image.
 
