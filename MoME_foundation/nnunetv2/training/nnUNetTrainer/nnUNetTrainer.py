@@ -1100,7 +1100,7 @@ class nnUNetTrainer(object):
             l2 = self.loss(output, target)
             # r = self.current_epoch/self.num_epochs
             # self.print_to_log_file('Current loss weight: ',r)
-            l = (1-r)*(1-r)*(1-r)*l1 + (1-(1-r)*(1-r)*(1-r))*l2
+            l = (1-r)*(1-r)*l1 + (1-(1-r)*(1-r))*l2
             # l = (1-r)*l1 + r*l2
             # l = 0.2*l1+0.8*l2
 
