@@ -78,4 +78,4 @@ nnUNet_train XXX 3d_fullres MoME
 ```
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -c CONFIGURATION
 ```
-Additionally, the final MoME model has been released on Hugging Face at [Pretrained Experts](https://huggingface.co/ZhangxinruBIT/MoME_CHECKPOINS/upload/main/MoME_CHECKPOINS).
+Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME_CHECKPOINS/upload/main/MoME_CHECKPOINS).
