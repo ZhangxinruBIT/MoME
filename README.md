@@ -67,7 +67,7 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 
 **Training**
 
-Before utilizing the MoME training, make sure you have acquired pretrained modality experts trained with nnUNet using corresponding modality images. Our pretrained modality experts are available at huggingface [Pretrained Experts](https://huggingface.co/ZhangxinruBIT/MoME_CHECKPOINS/upload/main/Experts_CHECKPOINT).
+Before utilizing the MoME training, make sure you have acquired pretrained modality experts trained with nnUNet using corresponding modality images. Our pretrained modality experts are available at huggingface [Pretrained Experts](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/Pretrained_Experts).
 
 You can adjust the path to align with the your own specialized modality nnUNets in [nnUNetTrainer.initialize(from line 214 to 245)](MoME_foundation/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py). 
 Alternatively, you can utilize our well-trained experts and configure the path accordingly.
@@ -78,4 +78,4 @@ nnUNet_train XXX 3d_fullres MoME
 ```
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -c CONFIGURATION
 ```
-Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME_CHECKPOINS/upload/main/MoME_CHECKPOIN).
+Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT).
