@@ -1390,7 +1390,7 @@ class nnUNetTrainer(object):
             checkpoint2 = torch.load(filename_or_checkpoint.replace('latest','latest2').replace('best','best2'), map_location=self.device)
             checkpoint3 = torch.load(filename_or_checkpoint.replace('latest','latest3').replace('best','best3'), map_location=self.device)
             checkpoint4 = torch.load(filename_or_checkpoint.replace('latest','latest4').replace('best','best4'), map_location=self.device)
-            checkpoint5 = torch.load(filename_or_checkpoint.replace('latest','latest4').replace('best','best4'), map_location=self.device)
+            checkpoint5 = torch.load(filename_or_checkpoint.replace('latest','latest5').replace('best','best5'), map_location=self.device)
 
         # if state dict comes from nn.DataParallel but we use non-parallel model here then the state dict keys do not
         # match. Use heuristic to make it match
