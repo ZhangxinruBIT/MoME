@@ -67,7 +67,7 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 
 **Training**
 
-Before utilizing the MoME training, make sure you have acquired pretrained modality experts trained with nnUNet using corresponding modality images. Our pretrained modality experts are available at huggingface [Pretrained Experts](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/Pretrained_Experts).
+Before utilizing the MoME training, make sure you have acquired pretrained modality experts trained with nnUNet using corresponding modality images. Our pretrained modality experts are available at Hugging Face [Pretrained Experts](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/Pretrained_Experts).
 
 You can adjust the path to align with the your own specialized modality nnUNets in [nnUNetTrainer.initialize(from line 214 to 245)](MoME_foundation/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py). 
 Alternatively, you can utilize our well-trained experts and configure the path accordingly.
