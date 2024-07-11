@@ -75,6 +75,7 @@ Alternatively, you can utilize our well-trained experts and configure the path a
 nnUNet_train XXX 3d_fullres MoME
 ```
 **Inference**
+
 When performing inference, ensure you have the checkpoint list similar to [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT).
 ```
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth
