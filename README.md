@@ -40,7 +40,7 @@ But make sure you have downloaded the Advanced Normalization Tools ([ANTs](https
 The following command can be executed after you convert the dataset to the format required by [nnU-NetV2](https://github.com/MIC-DKFZ/nnUNet.git).
 ```
 cd MoME/Codes_prepro
-python one-step.py -dataset_path -ss #If the brain images in your dataset include the skull, please include the `-ss` flag; otherwise, omit it.
+python one-step.py -dataset_path -ss #If all the brain images in your dataset include the skull, please add the `-ss` flag. If none of the images include the skull, you can omit the flag. Do not mix brain images with and without skulls in the same directory, as their preprocessing steps are different.
 ```
 **Datasplit**
 
