@@ -1,5 +1,7 @@
-# MoME: A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts
+# MICCAI Conference Verision, MoME: 
 
+# A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts
+## 1. Overview
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb12.png)
 
 Fig.1: Different paradigms for brain lesion segmentation and an overview of the proposed framework:
@@ -20,7 +22,7 @@ Please also cite this paper [[link]](https://arxiv.org/pdf/2405.10246) if you ar
       publisher="Springer International Publishing",
       }
 
-# Installation
+## 2. Installation
 
 ```
 conda create --name MoME python=3.9.18
@@ -31,7 +33,7 @@ pip install -e .
 ```
 Additionally, since we have made significant changes to the third-party library named  **dynamic_network_architectures**, we did not take the [original one](https://github.com/MIC-DKFZ/dynamic-network-architectures). 
 
-# Usage Preparation
+## 3. Usage Preparation
 
 **Data Preprocessing**
 
@@ -57,7 +59,7 @@ if self.fold == 'MoME':
 ```
 to better manage the data split.
 
-# Usage with nnU-NetV2
+## 4. Usage with nnU-NetV2
 For traning and inference, since we implement within the nnU-NetV2, the well-introduced usage can be follwed at [nnU-Net](https://github.com/MIC-DKFZ/nnUNet.git). Please ensure that the dataset format meets the requirements expected by nnU-Net with our preprocessed data (Rename the directories to resemble **imagesTr** and **labelsTr** under **Dataset_XXXX**.). 
 
 **Experiment planning and preprocessing**
@@ -81,3 +83,31 @@ When performing inference, ensure you have the checkpoint list similar to [MoME_
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth
 ```
 Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT).
+
+# TMI Journal Extension Verision, MoME+: 
+## 1. Overview
+
+## 2. Installation
+MoME+ and MoME can share the same Conda environment. However, each time you switch between MoME and MoME+, you need to navigate to the corresponding folder and run **pip install -e .** to properly link the package.
+
+Assuming you have already set up the MoME virtual environment, follow these steps to activate it and configure MoME+:
+```
+conda activate MoME
+cd MoME/MoME_plus
+pip install -e .
+```
+This ensures that the correct package is linked within the environment. Always remember to repeat this process whenever switching between MoME and MoME+.
+
+## 3. Usage Preparation
+
+## 4. Usage with nnU-NetV2
+**Training**
+
+```
+nnUNet_train XXX 3d_fullres .......
+```
+**Inference**
+
+```
+nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth ......
+```
