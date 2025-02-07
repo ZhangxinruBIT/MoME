@@ -86,6 +86,8 @@ Additionally, the final MoME model has been released on Hugging Face at [MoME_CH
 
 # TMI Journal Extension Verision, MoME+: 
 ## 1. Overview
+The MoME model has been extended to MoME+ to handle combined multiple modalities as input. To this end, we develop a novel dispatch network with a soft assignment strategy and prior constraints, and employ random dropout of modalities during training to mimic the heterogeneous input.
+![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/Extension.png)
 
 ## 2. Installation
 MoME+ and MoME can share the same Conda environment. However, each time you switch between MoME and MoME+, you need to navigate to the corresponding folder and run **pip install -e .** to properly link the package.
@@ -99,6 +101,7 @@ pip install -e .
 This ensures that the correct package is linked within the environment. Always remember to repeat this process whenever switching between MoME and MoME+.
 
 ## 3. Usage Preparation
+.......
 
 ## 4. Usage with nnU-NetV2
 **Training**
