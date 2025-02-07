@@ -102,9 +102,9 @@ This ensures that the correct package is linked within the environment. Always r
 
 ## 3. Usage Preparation
 
-We made some modifications to the original nnUNet requirements. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords.
+We made some modifications to the original nnUNet requirements. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords. Additionally, the structures of **imagesTr** and **imagesTs** differ slightly.
 
-For example, taking **BraTS2021_00000** case, all modality filenames for the images and labels should follow this format:
+For example, taking **BraTS2021_00000** training case and  **BraTS2021_00002** test case, all modality filenames for the images and labels should follow this format:
 ```
     ├── imagesTr
     │   ├── BraTS2021_00000_t1_0000.nii.gz
@@ -116,6 +116,15 @@ For example, taking **BraTS2021_00000** case, all modality filenames for the ima
     │   ├── BraTS2021_00000_t1ce.nii.gz
     │   ├── BraTS2021_00000_t2.nii.gz
     │   ├── BraTS2021_00000_flair.nii.gz
+    └── imagesTs
+    │   ├── BraTSt1
+            └── BraTS2021_00002_t1_0000.nii.gz
+    │   ├── BraTSt1ce
+            └── BraTS2021_00002_t1ce_0000.nii.gz
+    │   ├── BraTSt2
+            └── BraTS2021_00002_t2_0000.nii.gz
+    │   ├── BraTSflair
+            └── BraTS2021_00002_flair_0000.nii.gz
 ```
 Ensure that all files are named in this format to align with the modified preprocessing, training, and inference pipelines.
 
@@ -127,7 +136,11 @@ nnUNet_train XXX 3d_fullres .......
 ```
 **Inference**
 
-For assessing the extended multi-input MoME+ model, we used the BraTS2021 dataset, which contains T1w, T1ce, T2w, and FLAIR modalities, and simulated different scenarios of missing modalities. {pecifically, for the four modalities, each can either be available or unavailable, with the constraint that at least one modality must be present. This results in a total of $2^4 - 1$ possible combinations. You can specify different combinations using the **--MultiMod X X X X** parameter, where 0 indicates an unavailable modality and 1 signifies an available one.
+For assessing the extended multi-input MoME+ model, we used the BraTS2021 dataset, which contains T1w, T1ce, T2w, and FLAIR modalities, and simulated different scenarios of missing modalities. {pecifically, for the four modalities, each can either be available or unavailable, with the constraint that at least one modality must be present. This results in a total of $2^4 - 1$ possible combinations. You can specify different combinations using the **–MultiMod X X X X ** parameter, where 0 indicates an unavailable modality and 1 denotes an available one. Note that the imagesTs folder contains 4 subfolders: BraTSt1, BraTSt1ce, BraTSt2, and BraTSflair. When the first “1” appears in the –MultiMod parameter, the corresponding subfolder will be selected as the input (-i). For example:
 ```
-nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod X X X X
+nnUNetv2_predict -i INPUT_FOLDER/BraTSt1 -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod 1 X X X
+nnUNetv2_predict -i INPUT_FOLDER/BraTSt1ce -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod 0 1 X X
+nnUNetv2_predict -i INPUT_FOLDER/BraTSt2 -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod 0 0 1 X
+nnUNetv2_predict -i INPUT_FOLDER/BraTSflair -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod 0 0 0 1
 ```
+This structure ensures that the correct modality is selected based on the --MultiMod parameter.
