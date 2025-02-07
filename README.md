@@ -101,7 +101,23 @@ pip install -e .
 This ensures that the correct package is linked within the environment. Always remember to repeat this process whenever switching between MoME and MoME+.
 
 ## 3. Usage Preparation
-.......
+
+We made some modifications to the original nnUNet requirements. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords.
+
+For example, taking **BraTS2021_00000** case, all modality filenames for the images and labels should follow this format:
+```
+    ├── imagesTr
+    │   ├── BraTS2021_00000_t1_0000.nii.gz
+    │   ├── BraTS2021_00000_t1ce_0000.nii.gz
+    │   ├── BraTS2021_00000_t2_0000.nii.gz
+    │   ├── BraTS2021_00000_flair_0000.nii.gz
+    └── labelsTr
+    │   ├── BraTS2021_00000_t1.nii.gz
+    │   ├── BraTS2021_00000_t1ce.nii.gz
+    │   ├── BraTS2021_00000_t2.nii.gz
+    │   ├── BraTS2021_00000_flair.nii.gz
+```
+Ensure that all files are named in this format to align with the modified preprocessing, training, and inference pipelines.
 
 ## 4. Usage with nnU-NetV2
 **Training**
@@ -111,6 +127,7 @@ nnUNet_train XXX 3d_fullres .......
 ```
 **Inference**
 
+For assessing the extended multi-input MoME+ model, we used the BraTS2021 dataset, which contains T1w, T1ce, T2w, and FLAIR modalities, and simulated different scenarios of missing modalities. {pecifically, for the four modalities, each can either be available or unavailable, with the constraint that at least one modality must be present. This results in a total of $2^4 - 1$ possible combinations. You can specify different combinations using the **--MultiMod X X X X** parameter, where 0 indicates an unavailable modality and 1 signifies an available one.
 ```
-nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth ......
+nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod X X X X
 ```
