@@ -132,6 +132,11 @@ For example, taking **BraTS2021_00000** training case and  **BraTS2021_00002** t
 Ensure that all files are named in this format to align with the modified preprocessing, training, and inference pipelines.
 
 ## 4. Usage with nnU-NetV2
+**Experiment planning and preprocessing**
+```
+nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
+```
+
 **Training**
 
 ```
