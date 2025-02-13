@@ -23,14 +23,13 @@ Please also cite this paper [[link]](https://arxiv.org/pdf/2405.10246) if you ar
       }
 
       @ARTICLE{10879789,
-        author={Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Qiao, Mengyun and Gu, Renyang and Matthews, Paul M. and Liu, Yaou and Ye,         Chuyang and Bai, Wenjia},
+        author={Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Qiao, Mengyun and Gu, Renyang and Matthews, Paul M. and Liu, Yaou and Ye, Chuyang and Bai, Wenjia},
         journal={IEEE Transactions on Medical Imaging}, 
         title={A Foundation Model for Lesion Segmentation on Brain MRI with Mixture of Modality Experts}, 
         year={2025},
         volume={Early Access},
         number={Early Access},
         pages={1-1},
-        keywords={Image segmentation;Lesions;Brain modeling;Imaging;Foundation models;Biomedical imaging;Magnetic resonance imaging;Training;Context                      modeling;Three-dimensional displays;Foundation Model;Mixture of Experts;Brain Imaging;Brain Lesion Segmentation},
         doi={10.1109/TMI.2025.3540809}}
 
 
