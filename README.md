@@ -144,6 +144,7 @@ Ensure that all files are named in this format to align with the modified prepro
 
 ## 4. Usage with nnU-NetV2
 **Experiment planning and preprocessing**
+
 ```
 nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
@@ -153,6 +154,9 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 nnUNet_train XXX 3d_fullres .......
 ```
+We employ random dropout of modalities during training to mimic the heterogeneous input.
+
+
 **Inference**
 
 For assessing the extended multi-input MoME+ model, we used the BraTS2021 dataset, which contains T1w, T1ce, T2w, and FLAIR modalities, and simulated different scenarios of missing modalities. Specifically, for the four modalities, each can either be available or unavailable, with the constraint that at least one modality must be present. This results in a total of $2^4 - 1$ possible combinations. You can specify different combinations using the **–MultiMod X X X X ** parameter, where 0 indicates an unavailable modality and 1 denotes an available one. Note that the imagesTs folder contains 4 subfolders: BraTSt1, BraTSt1ce, BraTSt2, and BraTSflair. When the first “1” appears in the –MultiMod parameter, the corresponding subfolder will be selected as the input (-i). For example:
