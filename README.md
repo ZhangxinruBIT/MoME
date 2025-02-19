@@ -154,7 +154,7 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 ```
 nnUNet_train XXX 3d_fullres .......
 ```
-We employ random dropout of modalities during training to mimic the heterogeneous input.
+We employ random dropout of modalities during training to mimic the heterogeneous input. So that during the inference the input data can be heterogeneous.
 
 
 **Inference**
