@@ -118,7 +118,7 @@ This ensures that the correct package is linked within the environment. Always r
 
 We made some modifications to the original nnUNet requirements of the data structure. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords. Additionally, the structures of **imagesTr** and **imagesTs** differ slightly.
 
-For example, taking **BraTS2021_00000** training case and  **BraTS2021_00002** test case, all modality filenames for the images and labels should follow this format:
+For example, taking **BraTS2021_00000** as training case and  **BraTS2021_00002** as test case, all modality filenames for the images and labels should follow this format:
 ```
     ├── imagesTr
     │   ├── BraTS2021_00000_t1_0000.nii.gz
