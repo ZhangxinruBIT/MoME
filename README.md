@@ -1,6 +1,6 @@
 # MICCAI Conference Verision, MoME: 
 
-# A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts [Paper](https://link.springer.com/chapter/10.1007/978-3-031-72390-2_36)
+# A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts [(Paper Link)](https://link.springer.com/chapter/10.1007/978-3-031-72390-2_36)
 ## 1. Overview
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb12.png)
 
