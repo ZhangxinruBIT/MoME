@@ -11,7 +11,7 @@ c) the proposed mixture of modality experts (**MoME**) framework for constructin
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/comb34.png)
 Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart that compares the average Dice score of foundation models from the perspectives of different modalities and lesion types. b) t-SNE plots of latent spaces for nnU-Net and  **MoME**, where each dot represents a brain image.
 
-Please also cite these paper [[MICCAI link]](https://arxiv.org/pdf/2405.10246) and [[TMI link]]([https://arxiv.org/pdf/2405.10246](https://ieeexplore.ieee.org/abstract/document/10879789)) if you are using MoME for your research!
+Please also cite these paper [[MICCAI link]](https://arxiv.org/pdf/2405.10246) and [[TMI link]](https://ieeexplore.ieee.org/abstract/document/10879789) if you are using MoME for your research!
 
       @InProceedings{Zhang2024MoME,
       author="Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Gu, Renyang and Ouyang, Cheng and Liu, Yaou and Matthew, Paul M.
