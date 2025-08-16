@@ -155,6 +155,7 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 nnUNet_train XXX 3d_fullres .......
 ```
 We employ random dropout of modalities during training to mimic the heterogeneous input. So that during the inference the input data can be heterogeneous.
+Make sure to **pretrain the modality expert model** first, and then update the path in [`nnUNetTrainer.py`](https://github.com/ZhangxinruBIT/MoME/blob/1cec2d1c459d52f73b1a535d8df96514f78480bf/MoME_plus/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py#L215) (line 215、221、229、236).
 
 
 **Inference**
@@ -167,3 +168,5 @@ nnUNetv2_predict -i INPUT_FOLDER/BraTSt2 -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID 
 nnUNetv2_predict -i INPUT_FOLDER/BraTSflair -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth --MultiMod 0 0 0 1
 ```
 This structure ensures that the correct modality is selected based on the --MultiMod parameter.
+
+The final MoME+ model has been released on Hugging Face at [MoME_plus_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus_CHECKPOINT).
