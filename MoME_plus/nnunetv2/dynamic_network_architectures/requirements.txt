@@ -1,0 +1,4 @@
+dynamic_network_architectures==0.3.1
+hiddenlayer==0.3
+numpy==1.26.4
+torch==2.2.1

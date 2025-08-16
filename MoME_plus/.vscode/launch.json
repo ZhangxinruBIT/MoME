@@ -1,0 +1,20 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "/vol/biomedic3/xz2223/Project/MoME/MoME_with_multimod/nnunetv2/run/run_training.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": ["013","3d_fullres","BraTS"],
+            "env":{
+                "CUDA_VISIBLE_DEVICES":"2"
+            },
+            "justMyCode": false
+        }
+    ]
+}
