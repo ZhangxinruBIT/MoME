@@ -114,8 +114,9 @@ pip install -e .
 This ensures that the correct package is linked within the environment. Always remember to repeat this process whenever switching between MoME and MoME+.
 
 ## 3. Usage Preparation
+**Data Preprocessing** and **Datasplit** can follow the same instructions described in the MoME section.
 
-We made some modifications to the original nnUNet requirements of the data structure. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords. Additionally, the structures of **imagesTr** and **imagesTs** differ slightly.
+Besides, we made some modifications to the original nnUNet requirements of the data structure. Specifically, for the BraTS2021 dataset which contains T1w, T1ce, T2w, and FLAIR modalities, we do not use 0000, 0001, 0002, 0003 to differentiate modalities for the same patient. Instead, we directly use the modality keywords. Additionally, the structures of **imagesTr** and **imagesTs** differ slightly.
 
 For example, taking **BraTS2021_00000** as training case and  **BraTS2021_00002** as test case, all modality filenames for the images and labels should follow this format:
 ```
@@ -141,7 +142,7 @@ For example, taking **BraTS2021_00000** as training case and  **BraTS2021_00002*
 ```
 Ensure that all files are named in this format to align with the modified preprocessing, training, and inference pipelines.
 
-## 4. Usage with nnU-NetV2
+## 4. Usage with nnU-NetV2 framework
 **Experiment planning and preprocessing**
 
 ```
@@ -150,8 +151,8 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 
 **Training**
 
-Before running MoME+ training, ensure that you have pretrained modality experts with nnUNet using the corresponding modality-specific images.
-In our paper, MoME+ is evaluated on the BraTS dataset for a fair comparison, so each modality expert is pretrained exclusively on BraTS data within the nnUNet framework. You can find our pretrained expert models [here](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/Pretrained_Experts)
+Before running MoME+ training, ensure that you have pretrained modality experts with [nnU-Net](https://github.com/MIC-DKFZ/nnUNet.git) using the corresponding modality-specific images.
+In our paper, MoME+ is evaluated on the BraTS dataset for a fair comparison, so each modality expert is pretrained exclusively on BraTS data within the nnUNet framework. You can find our pretrained expert models [here](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/Pretrained_Experts).
 
 ```
 nnUNet_train XXX 3d_fullres .......
