@@ -149,10 +149,8 @@ def run_training(dataset_name_or_id: Union[str, int],
                  val_with_best: bool = False,
                  device: torch.device = torch.device('cuda')):
     if isinstance(fold, str):
-        if fold != 'all' and fold != 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixloss' and fold != 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV1' and fold != 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV2' \
-            and fold != 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV3' and fold != 'BraTS_hard_Adaptive_01input' and fold != 'TTCH' and fold != 'TTCADWI' and fold != 'T2andFlair2experts'\
-                and fold != 'BraTS_hard_Adaptive_01input_prior_embading_1cV4' and fold != 'BraTS_hard_Adaptive_01input_prior_embading_1cV5' and fold != 'ISLES' and fold != 'OASIS' \
-        and fold != 'BraTS_hard_Adaptive_01input_prior_embading_1c_fc_soft' and fold != 'TTtumor_t2' and fold != 'BraTSt1ce' and fold != 'BraTS' and fold != 'BraTS_MoME_defaultV1': 
+        if fold != 'all' and fold != 'MoME_plus' and fold != 'TTCH' and fold != 'TTCADWI' and fold != 'T2andFlair2experts' and fold != 'ISLES' and fold != 'OASIS' \
+         and fold != 'TTtumor_t2' and fold != 'BraTSt1ce' and fold != 'BraTS' and fold != 'BraTS_MoME_defaultV1': 
             try:
                 fold = int(fold)
             except ValueError as e:

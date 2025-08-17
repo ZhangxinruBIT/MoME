@@ -669,7 +669,7 @@ class nnUNetTrainer(object):
             self.print_to_log_file('val keys: ',val_keys)   
 
         # elif self.fold == 'BraTS_hard_Adaptive_01input_prior_embading_1c_CLS_softV2' or self.fold == 'BraTS_hard_Adaptive_01input_prior_embading_1c_CLS_soft' or self.fold == 'BraTS_hard_Adaptive_01input_prior_embading_1c_CLS_soft_250val' or self.fold == 'BraTS_hard_Adaptive_01input_prior_embading_1c_CLS_softV3':
-        elif self.fold == 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixloss' or self.fold == 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV1' or self.fold == 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV2' or self.fold == 'BraTS_Adaptive_01input_prior_embading_1c_CLS_soft_fixlossV3':    
+        elif self.fold == "MoME_plus":    
             tr_keys = DATA['train']['BraTS']
             # tr_keys = [key for key in tr_keys if 't1ce' in key]
             val_keys = DATA['val']['BraTS']
