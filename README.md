@@ -93,12 +93,11 @@ When performing inference, ensure you have the pretrained checkpoint list simila
 ```
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth
 ```
-Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT]([https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_foundation/MoME_CHECKPOINT)).
+Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_foundation/MoME_CHECKPOINT).
 
 # TMI Journal Extension Verision, MoME+: 
 # 🚧 Repository Update in Progress 🚧  
 
-⚠️ This part of the repository is still being updated. Some features or code may not be fully available yet. Please check back later or follow the repository for updates.  
 ## 1. Overview
 The MoME model has been extended to MoME+ to handle combined multiple modalities as input. To this end, we develop a novel dispatch network with a soft assignment strategy and prior constraints, and employ random dropout of modalities during training to mimic the heterogeneous input.
 ![image](https://github.com/ZhangxinruBIT/MoME/blob/main/fig/Extension.png)
@@ -172,4 +171,4 @@ nnUNetv2_predict -i INPUT_FOLDER/BraTSflair -o OUTPUT_FOLDER -d DATASET_NAME_OR_
 ```
 This structure ensures that the correct modality is selected based on the --MultiMod parameter.
 
-The final MoME+ model has been released on Hugging Face at [MoME_plus_CHECKPOINT]([https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/MoME_plus_CHECKPOINT)).
+The final MoME+ model has been released on Hugging Face at [MoME_plus_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/MoME_plus_CHECKPOINT).
