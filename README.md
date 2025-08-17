@@ -95,8 +95,7 @@ nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME 
 ```
 Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_foundation/MoME_CHECKPOINT).
 
-# TMI Journal Extension Verision, MoME+: 
-# 🚧 Repository Update in Progress 🚧  
+# TMI Journal Extension Verision, MoME+:  
 
 ## 1. Overview
 The MoME model has been extended to MoME+ to handle combined multiple modalities as input. To this end, we develop a novel dispatch network with a soft assignment strategy and prior constraints, and employ random dropout of modalities during training to mimic the heterogeneous input.
