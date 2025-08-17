@@ -89,11 +89,11 @@ nnUNet_train XXX 3d_fullres MoME
 ```
 **Inference**
 
-When performing inference, ensure you have the checkpoint list similar to [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT).
+When performing inference, ensure you have the pretrained checkpoint list similar to [Pretrained_Experts]([https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_foundation/Pretrained_Experts)).
 ```
 nnUNetv2_predict -i INPUT_FOLDER -o OUTPUT_FOLDER -d DATASET_NAME_OR_ID -f MoME -c 3d_fullres -chk checkpoint_best.pth
 ```
-Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT).
+Additionally, the final MoME model has been released on Hugging Face at [MoME_CHECKPOINT]([https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_foundation/MoME_CHECKPOINT)).
 
 # TMI Journal Extension Verision, MoME+: 
 # 🚧 Repository Update in Progress 🚧  
@@ -151,6 +151,9 @@ nnUNetv2_plan_and_preprocess -d DATASET_ID --verify_dataset_integrity
 
 **Training**
 
+Before running MoME+ training, ensure that you have pretrained modality experts with nnUNet using the corresponding modality-specific images.
+In our paper, MoME+ is evaluated on the BraTS dataset for a fair comparison, so each modality expert is pretrained exclusively on BraTS data within the nnUNet framework. You can find our pretrained expert models [here](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/Pretrained_Experts)
+
 ```
 nnUNet_train XXX 3d_fullres .......
 ```
@@ -169,4 +172,4 @@ nnUNetv2_predict -i INPUT_FOLDER/BraTSflair -o OUTPUT_FOLDER -d DATASET_NAME_OR_
 ```
 This structure ensures that the correct modality is selected based on the --MultiMod parameter.
 
-The final MoME+ model has been released on Hugging Face at [MoME_plus_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus_CHECKPOINT).
+The final MoME+ model has been released on Hugging Face at [MoME_plus_CHECKPOINT]([https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus_CHECKPOINT](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/MoME_plus_CHECKPOINT)).
