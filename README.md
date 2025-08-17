@@ -13,23 +13,24 @@ Fig.2:Detailed analysis of the MoME result on seen datasets. a) A radar chart th
 
 Please also cite these paper [[MICCAI link]](https://arxiv.org/pdf/2405.10246) and [[TMI link]](https://ieeexplore.ieee.org/abstract/document/10879789) if you are using MoME for your research!
 
-      @InProceedings{Zhang2024MoME,
-      author="Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Gu, Renyang and Ouyang, Cheng and Liu, Yaou and Matthew, Paul M.
-      and Ye, Chuyang and Bai, Wenjia",
-      title="A Foundation Model for Brain Lesion Segmentation with Mixture of Modality Experts",
-      booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2024",
-      year="2024",
-      publisher="Springer International Publishing",
+      @inproceedings{zhang2024foundation,
+        title={A foundation model for brain lesion segmentation with mixture of modality experts},
+        author={Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Qiao, Mengyun and Gu, Renyang and Ouyang, Cheng and Liu, Yaou and                 Matthews, Paul M and Ye, Chuyang and others},
+        booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+        pages={379--389},
+        year={2024},
+        organization={Springer}
       }
 
-      @ARTICLE{Zhang2025MoME,
-        author={Zhang, Xinru and Ou, Ni and Basaran, Berke Doga and Visentin, Marco and Qiao, Mengyun and Gu, Renyang and Matthews, Paul M. and Liu, Yaou and Ye, Chuyang and Bai, Wenjia},
+      @ARTICLE{10879789,
+        author={Zhang, Xinru and Ou, Ni and Doga Basaran, Berke and Visentin, Marco and Qiao, Mengyun and Gu, Renyang and Matthews, Paul M. and Liu, Yaou and Ye,         Chuyang and Bai, Wenjia},
         journal={IEEE Transactions on Medical Imaging}, 
-        title={A Foundation Model for Lesion Segmentation on Brain MRI with Mixture of Modality Experts}, 
+        title={A Foundation Model for Lesion Segmentation on Brain MRI With Mixture of Modality Experts}, 
         year={2025},
-        volume={Early Access},
-        number={Early Access},
-        pages={1-1},
+        volume={44},
+        number={6},
+        pages={2594-2604},
+        keywords={Image segmentation;Lesions;Brain modeling;Imaging;Foundation models;Biomedical imaging;Magnetic resonance imaging;Training;Context                      modeling;Three-dimensional displays;Foundation model;mixture of experts;brain imaging;brain lesion segmentation},
         doi={10.1109/TMI.2025.3540809}}
 
 
