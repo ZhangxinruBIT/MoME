@@ -154,7 +154,7 @@ Before running MoME+ training, ensure that you have pretrained modality experts 
 In our paper, MoME+ is evaluated on the BraTS dataset for a fair comparison, so each modality expert is pretrained exclusively on BraTS data within the nnUNet framework. You can find our pretrained expert models [here](https://huggingface.co/ZhangxinruBIT/MoME/tree/main/MoME_plus/Pretrained_Experts).
 
 ```
-nnUNet_train XXX 3d_fullres .......
+nnUNet_train XXX 3d_fullres MoME_plus
 ```
 We employ random dropout of modalities during training to mimic the heterogeneous input. So that during the inference the input data can be heterogeneous.
 Make sure to **pretrain the modality expert model** first, and then update the path in [`nnUNetTrainer.py`](https://github.com/ZhangxinruBIT/MoME/blob/1cec2d1c459d52f73b1a535d8df96514f78480bf/MoME_plus/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py#L215) (line 215、221、229、236).
